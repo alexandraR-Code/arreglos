@@ -1,0 +1,2 @@
+let arreglosIzquierda = [];
+let arreglosDerecha = [];
