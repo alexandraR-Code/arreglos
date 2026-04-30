@@ -64,3 +64,12 @@ function moverHaciaDerecha(indice){
     
 }
 
+function moverHaciaIzquierda(indice){
+    let valor = edadesDerecho[indice];
+    edadesIzquierdo.push(valor);
+    edadesDerecho.splice(indice, 1);
+    pintarArregloIzquierda();
+    pintarArregloDerecha();
+
+
+}
