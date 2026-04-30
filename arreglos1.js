@@ -54,3 +54,13 @@ function eliminarDerecho(indice){
     edadesDerecho.splice(indice, 1);
     pintarArregloDerecha();
 }
+
+function moverHaciaDerecha(indice){
+    let valor = edadesIzquierdo[indice];
+    edadesDerecho.push(valor);
+    edadesIzquierdo.splice(indice, 1);
+    pintarArregloIzquierda();
+    pintarArregloDerecha();
+    
+}
+
