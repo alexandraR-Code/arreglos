@@ -49,3 +49,8 @@ function pintarArregloDerecha(){
         tabla.innerHTML += fila;
     }
 }
+
+function eliminarDerecho(indice){
+    edadesDerecho.splice(indice, 1);
+    pintarArregloDerecha();
+}
