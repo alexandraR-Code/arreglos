@@ -44,7 +44,7 @@ function pintarArregloDerecha(){
         let fila = "<tr>";
         fila += "<td><button class='btn-mover' onclick='moverHaciaIzquierda(" + i + ")'>⬅</button></td>";
         fila += "<td>" + edadesDerecho[i] + "</td>";
-        fila += "<td><button class='btn-eliminar' onclick='eliminarDerecha(" + i + ")'>Eliminar</button></td>";
+        fila += "<td><button class='btn-eliminar' onclick='eliminarDerecho(" + i + ")'>Eliminar</button></td>";
         fila += "</tr>";
         tabla.innerHTML += fila;
     }
@@ -67,7 +67,9 @@ function moverHaciaDerecha(indice){
 function moverHaciaIzquierda(indice){
     let valor = edadesDerecho[indice];
     edadesIzquierdo.push(valor);
+    //saca el valor del izquierdo
     edadesDerecho.splice(indice, 1);
+    // ingresa el valor al derecho
     pintarArregloIzquierda();
     pintarArregloDerecha();
 
