@@ -6,7 +6,7 @@ function agregarEdad(){
     // busca el input con id="edad" y lee lo que el usuario escribe 
     let numero = parseInt(valor);
     // Convierte "12" (texto) 12 (numero)
-    edadesIzquierdo.push(valor);
+    edadesIzquierdo.push(numero);
     //agregar ese número al final del arreglo izquierdo 
     pintarArregloIzquierda();
     // actualiza la tabla en pantalla (lo hacemos en el punto 3)
@@ -22,22 +22,30 @@ function pintarArregloIzquierda(){
         //creacion de variable que construye el HTML de una fila de la tabla <tr> significa table row(fila de tabla)
         fila += "<td>" + edadesIzquierdo[i] + "</td>";
         //+= significa " agrega esto a lo que ya tenia" aquí añadimos una celda con el número. si i ¡, esto pone <td>12</td>
-        fila += "<td><button> class='btn-eliminar' onclick='eliminarIzquierda(" + i +")'>Eliminar</button><td>";
+        fila += "<td><button class='btn-eliminar' onclick='eliminarIzquierdo(" + i +")'>Eliminar</button></td>";
         //añadimos un boton eliminar, así en onclick sabe que fila eliminar 
-        fila += "<td><button class=''btn-mover onclick='moverHaciaDerecha(" + i + ")'>➜</button></td>";
+        fila += "<td><button class='btn-mover' onclick='moverHaciaDerecha(" + i + ")'>➜</button></td>";
         //añadimos el boton de mover
         fila += "</tr>";
         //cerramos la fila
         tabla.innerHTML += fila;
         //Tomamos la fila que construimos y la pegamos dentro de la tabla en el HTML
     }
+}
 function eliminarIzquierdo(indice){
     edadesIzquierdo.splice(indice, 1);
     pintarArregloIzquierda();
 }
+function pintarArregloDerecha(){
+    let tabla = document.getElementById("tablaDerecha");
+    tabla.innerHTML = "";
 
-
-
-
-
+    for(let i = 0; i < edadesDerecho.length; i++){
+        let fila = "<tr>";
+        fila += "<td><button class='btn-mover' onclick='moverHaciaIzquierda(" + i + ")'>⬅</button></td>";
+        fila += "<td>" + edadesDerecho[i] + "</td>";
+        fila += "<td><button class='btn-eliminar' onclick='eliminarDerecha(" + i + ")'>Eliminar</button></td>";
+        fila += "</tr>";
+        tabla.innerHTML += fila;
+    }
 }
